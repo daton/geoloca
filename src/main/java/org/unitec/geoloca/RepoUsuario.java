@@ -5,9 +5,10 @@
  */
 package org.unitec.geoloca;
 
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 
 public interface RepoUsuario extends MongoRepository<Usuario, String>{
-    
+    public List<Usuario> findByNombre(String nombre);
 }

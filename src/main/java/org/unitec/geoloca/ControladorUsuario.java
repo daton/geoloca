@@ -44,6 +44,13 @@ public class ControladorUsuario {
        e.setSuccess(true);
         return e;
     }
+    @GetMapping("/usuario/nombre")
+    public List<Usuario> buscarPorNombre(@RequestBody String json)throws Exception{
+        ObjectMapper maper=new ObjectMapper();
+        Usuario u=maper.readValue(json, Usuario.class);
+      return  repoUsuario.findByNombre(u.getNombre());
+    }
+    
     
     
 }
